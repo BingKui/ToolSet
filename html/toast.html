@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑";
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/toast.css"/>
+	</head>
+	<body style="background-color: #eee;">
+		<!--<div class="ui-tip-toast">
+			<div class="ui-toast-centent">
+				<span class="span-success"></span>
+				<p>请选择营销案档次请选择营销案档次请选择营销案档次请选择营销案档次</p>
+			</div>
+		</div>-->
+		<button onclick="tip.open()">默认的打开</button>
+		<button onclick="tip.setContent('改变后的内容！');tip.open()">改变内容后打开</button>
+		<button onclick="tip.setContent('改变后的内容！');tip.setPosition(500);tip.open()">改变内容和位置后打开</button>
+	</body>
+	<script src="../lib/jquery/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var tip = new AIToastTip({
+			message:"请选择营销案档次请选择营销案档次请选择营销案档次请选择营销案档次",
+			type:"success"
+		});
+		
+	</script>
+</html>

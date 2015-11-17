@@ -1,0 +1,57 @@
+/*给导航添加间隔条*/
+/*常规做法*/
+/* add brder*/
+.nav li{
+	border-right: 1px solid #666;
+}
+.nav li:last-child{
+	border-right: none;
+}
+/*简化操作*/
+.nav li:not(:last-child){
+	border-right: 1px solid #666;
+}
+/*或者增加左边框*/
+.nav li:first-child ~ li{
+	border-left: 1px solid #666;
+}
+/*任意元素垂直居中*/
+html,body{
+	height: 100%;
+	margin: 0;
+}
+body{
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	display: -webkit-flex;
+	display: flex;
+}
+/*逗号分隔的列表*/
+ul > li:not(:last-child)::after{
+	content: ',';
+}
+/*在nth-child中使用负值*/
+li{
+	display: none;
+}
+li:nth-child(-n+3){
+	display: block;
+}
+/*文本显示优化*/
+html{
+	-moz-osx-font-smoothing:grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+}
+/*初始化box-sizing*/
+html{
+	box-sizing: border-box;
+}
+*,*:before,*:after{
+	box-sizing: border-box;
+}
+/*给空连接使用属性选择符*/
+a[href^='http']:empty::before{
+	content: attr(href);
+}

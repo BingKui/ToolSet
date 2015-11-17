@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/base.css" />
+		<link rel="stylesheet" type="text/css" href="../css/step.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icon.css" />
+		<style type="text/css">
+			.step-list {
+				width: 750px;
+			}
+			.mmm{
+				margin: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<div class="step-list">
+			<div id="step-ul">
+				<div class="step-ul-li pass">第一步</div>
+				<span class="ui-active ui-active-after"></span>
+				<div class="step-ul-li active">第二步</div>
+				<span class="ui-active ui-active-befor"></span>
+				<div class="step-ul-li">第三步</div>
+				<span class="ui-active"></span>
+				<div class="step-ul-li"><i></i>第四步</div>
+			</div>
+		</div>-->
+		<div class="step-list mmm" id="step"></div>
+		<button onclick="step.prevStep()">上一步</button>
+		<button onclick="step.nextStep()">下一步</button>
+		<button onclick="console.log(step.getStep())">获取步骤数</button>
+	</body>
+	<script src="../lib/jquery/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/step.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var s_step = [{
+			"name": "预约"
+		}, {
+			"name": "审核"
+		}, {
+			"name": "办理"
+		}, {
+			"name": "成功"
+		}];
+		var step = $("#step").step({
+			data:s_step
+		});
+	</script>
+
+</html>
